@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# ScreenCast Tray 启动器
+set -euo pipefail
+
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV="${SCREENCAST_VENV:-$HOME/venv}"
+
+if [ -f "$VENV/bin/activate" ]; then
+    # shellcheck disable=SC1090
+    source "$VENV/bin/activate"
+fi
+
+export PYTHONPATH="$HERE${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONUNBUFFERED=1
+
+cd "$HERE"
+exec python -m screencast "$@"

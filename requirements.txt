@@ -1,0 +1,8 @@
+# Python 侧依赖
+#
+# PyGObject / GTK / Wnck / AppIndicator 来自系统包，请用 apt 安装（pip 装不了）：
+#   sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 \
+#        gir1.2-wnck-3.0 gir1.2-ayatanaappindicator3-0.1 libnotify-bin ffmpeg
+#
+# 其余用 pip 装：
+pychromecast>=13.0.0
